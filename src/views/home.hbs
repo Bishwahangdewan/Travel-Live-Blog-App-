@@ -1,3 +1,20 @@
 {{> header}}
-  <h1>HomePage</h1>
+{{> navbar}}
+  <!--Showcase-->
+  <style>
+    .showcase__container{
+      background-image: url('/img/showcase_img.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+
+  <div class="showcase__container">
+    <div class="showcase__content">
+      <h1 class="showcase__title">Moraine Lake</h1>
+      <p class="showcase__para">It’s unique colour is due to the refraction of light off the rock flour deposited in the lake on a continual basis by surrounding glaciers.</p>
+      <button class="showcase__btn">Read More</button>
+    </div>
+  </div>
 {{> footer}}
