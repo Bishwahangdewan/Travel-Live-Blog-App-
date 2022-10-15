@@ -7,6 +7,36 @@
   color: #333;
 }
 
+/*----------GLOBAL-STYLES----------------*/
+.h2{
+  font-size: 30px;
+}
+
+.h3{
+  font-size: 26px;
+}
+
+.h4{
+  font-size: 22px;
+}
+
+.para-text{
+  font-size: 16px;
+  line-height: 25px;
+  color: #555;
+}
+
+.py-10{
+  padding: 10px 0;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.color-white{
+  color: #fff;
+}
 
 /*---------- NAVBAR-STYLES --------------*/
 .navbar__inner{
@@ -94,4 +124,113 @@
   border-radius: 3px;
   margin-top: 20px;
   cursor: pointer;
+}
+
+/*---------- HOME-BODY ---------*/
+.homeBody__container{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 7%;
+}
+
+.mostPopular__container{
+  width: 75%;
+}
+
+.recentlyUpdated__container{
+  width: 25%;
+}
+
+.blogCard__container--small{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-top: 40px;
+  margin-bottom: 10%;
+}
+
+.blogCard__imgContainer--small{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blogCard__img--small{
+  width: 100%;
+}
+
+.blogCard__contentContainer--small{
+  width: 65%;
+}
+
+.blogCard__btn{
+  background-color: #333;
+  border: none;
+  color: white;
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.blogCard__container--vertical{
+  margin-top: 40px;
+}
+
+.blogCard__img--vertical{
+  width: 100%;
+}
+
+.blogCard__contentContainer--vertical{
+  padding-top: 20px;
+}
+
+
+
+/*-----------FOOTER-NEWSLETTER--------------*/
+.newsletter__container{
+  background-color: #111;
+  padding-top: 5%;
+  margin-top: 4%;
+}
+
+.newsletter__formGroup{
+  width: 40%;
+  margin: auto;
+  display:flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.newsletter__input{
+  width: 300px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.newsletter__input::placeholder{
+  font-size: 14px;
+}
+
+.newsletter__btn{
+  background-color: #8dc9e2;
+  color: #333;
+  padding:5px 20px;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer__copyright{
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  padding-bottom: 10px;
+  padding-top: 3%;
 }
