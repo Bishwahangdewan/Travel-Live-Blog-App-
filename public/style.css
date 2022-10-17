@@ -8,6 +8,10 @@
 }
 
 /*----------GLOBAL-STYLES----------------*/
+.h1{
+  font-size: 40px;
+}
+
 .h2{
   font-size: 30px;
 }
@@ -48,7 +52,7 @@
 
 /*---------- NAVBAR-STYLES --------------*/
 .navbar__container{
-  border-bottom: 1px solid #ccc; 
+  border-bottom: 1px solid #ccc;
 }
 
 .navbar__inner{
@@ -187,6 +191,7 @@
   border-radius: 3px;
   padding: 5px 10px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .blogCard__container--vertical{
@@ -209,6 +214,33 @@
   margin: auto;
 }
 
+/*-------------ARTICLE---------------*/
+.article__imgContainer{
+  width: 100%;
+  height: 500px;
+}
+
+.article__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article__body{
+  width:90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top:5%;
+}
+
+.article__content{
+  width: 65%;
+}
+
+.article__similarArticles{
+  width: 25%;
+}
 
 
 /*-----------FOOTER-NEWSLETTER--------------*/
