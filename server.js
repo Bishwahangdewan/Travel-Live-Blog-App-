@@ -3,7 +3,8 @@ const path = require('path');
 const hbs = require('hbs');
 
 //import routes
-const blog = require('./src/routes/Blog.router.js');
+const blog = require('./src/routes/blog/Blog.router.js');
+const admin = require('./src/routes/admin/Admin.router.js');
 
 const app = express();
 
@@ -21,5 +22,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 //useRoutes
 app.use(blog);
+app.use(admin);
 
 app.listen(port, () => console.log(`Server started in port ${port}`));
