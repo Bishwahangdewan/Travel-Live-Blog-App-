@@ -2,6 +2,12 @@
 {{> navbar }}
 
   <div class="dashboard__container">
+    {{#each message}}
+      <div class="msg msg-success">
+        <p>{{this}}</p>
+      </div>
+    {{/each}}
+
     <h3 class="h3 py-30">Manage your Blog Posts</h3>
 
     <table class="table__container">
@@ -13,34 +19,25 @@
         <th class="table__head">View Post</th>
       </tr>
 
-      <tr class="table__body__row">
-        <td class="table__body">Scotish Highlands</td>
-        <td class="table__body">15 June 2022</td>
-        <td class="table__body">
-          <a href="#" class="admin__edit__btn">Edit</a>
-        </td>
-        <td class="table__body">
-          <a href="#" class="admin__delete__btn">Delete</a>
-        </td>
-        <td class="table__body">
-          <a href="#" class="admin__view__btn">View</a>
-        </td>
-      </tr>
+      {{#posts}}
+        <tr class="table__body__row">
+          <td class="table__body">{{title}}</td>
+          <td class="table__body">27 August 2022</td>
+          <td class="table__body">
+            <a href="/admin/editPost/{{_id}}" class="admin__edit__btn">Edit</a>
+          </td>
+          <td class="table__body">
+            <form method="POST" action="/admin/deletePost/{{_id}}?_method=DELETE">
+              <input type="submit" value="Delete"  class="admin__delete__btn" />
+            </form>
+          </td>
+          <td class="table__body">
+            <a href="#" class="admin__view__btn">View</a>
+          </td>
+        </tr>
+      {{/posts}}
 
-      <tr class="table__body__row">
-        <td class="table__body">Imperial Palace</td>
-        <td class="table__body">27 August 2022</td>
-        <td class="table__body">
-          <a href="#" class="admin__edit__btn">Edit</a>
-        </td>
-        <td class="table__body">
-          <a href="#" class="admin__delete__btn">Delete</a>
-        </td>
-        <td class="table__body">
-          <a href="#" class="admin__view__btn">View</a>
-        </td>
-      </tr>
-
+      <!-- Before Dnamic data
       <tr class="table__body__row">
         <td class="table__body">Machu Pichu</td>
         <td class="table__body">5 September 2022</td>
@@ -67,12 +64,12 @@
         <td class="table__body">
           <a href="#" class="admin__view__btn">View</a>
         </td>
-      </tr>
+      </tr> -->
     </table>
 
     <div class="flex py-50">
       <h3 class="h3">Create a new Blog Post<h3>
-      <a class="admin__edit__btn ml-20" href="#" >Create</a>
+      <a class="admin__edit__btn ml-20" href="/admin/createPost" >Create</a>
     </div>
 
     <div class="flex">
@@ -80,5 +77,7 @@
       <a class="admin__edit__btn ml-20" href="#" >Manage</a>
     </div>
   </div>
+
+
 
 {{> adminFooter}}

@@ -1,0 +1,48 @@
+{{> header}}
+{{> navbar}}
+
+  <div class="createPost__container">
+    <h2 class="h2 py-30">Edit Blog Post </h2>
+
+    <form method="post" action="/admin/editPost/{{post._id}}?_method=PUT" class="createPost__formContainer">
+
+      <div class="createPost__formGroup">
+        <label for="title">Blog Title:</label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          class="createPost__formInput"
+          value='{{post.title}}'
+        />
+      </div>
+
+      <div class="createPost__formGroup">
+        <script src="https://cdn.ckeditor.com/4.9.1/standard/ckeditor.js"></script>
+        <label for="article">Blog Article:</label>
+        <textarea
+          type="text"
+          name="article"
+          id="article"
+          class="createPost__formTextArea"
+        >{{post.article}}</textarea>
+
+        <script>
+          CKEDITOR.replace( 'article' );
+        </script>
+      </div>
+
+      <div class="createPost__formGroup">
+        <input
+          type="submit"
+          name="submit"
+          id="submit"
+          value="Edit"
+          class="createPost__formBtn"
+        />
+      </div>
+
+    </form>
+  </div>
+
+{{> adminFooter}}
