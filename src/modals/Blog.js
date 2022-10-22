@@ -10,9 +10,12 @@ const blogSchema = new schema({
     type: String,
     required: true,
   },
+  image : {
+    type : String,
+  },
 },
 {
-  timestamps : true 
+  timestamps : true
 })
 
 const Blog = mongoose.model('blog', blogSchema);

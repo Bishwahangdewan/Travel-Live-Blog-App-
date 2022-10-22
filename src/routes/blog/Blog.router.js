@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+//import modals
+const Blog = require('../../modals/Blog.js')
+
 //Route: Root : HomePage
 router.get('/', (req, res) => {
   res.render('home');
@@ -13,7 +16,13 @@ router.get('/blog', (req, res) => {
 
 //Route: /blog/:id : ArticlePage
 router.get('/blog/:id', (req, res) => {
-  res.render('article');
+  //find single posts
+  Blog.findOne({
+    _id : req.params.id
+  })
+  .then((data) => {
+    res.render('article',{ post : data });
+  })
 })
 
 module.exports = router;

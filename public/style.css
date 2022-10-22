@@ -262,6 +262,10 @@
   width: 65%;
 }
 
+.article_info p{
+  line-height: 1.6;
+}
+
 .article__similarArticles{
   width: 25%;
 }
@@ -373,7 +377,7 @@
 }
 
 .table__container{
-  width: 80%;
+  width: 100%;
 }
 
 .table__head{

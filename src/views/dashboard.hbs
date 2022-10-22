@@ -22,7 +22,7 @@
       {{#posts}}
         <tr class="table__body__row">
           <td class="table__body">{{title}}</td>
-          <td class="table__body">27 August 2022</td>
+          <td class="table__body">{{createdAt}}</td>
           <td class="table__body">
             <a href="/admin/editPost/{{_id}}" class="admin__edit__btn">Edit</a>
           </td>
@@ -32,7 +32,7 @@
             </form>
           </td>
           <td class="table__body">
-            <a href="#" class="admin__view__btn">View</a>
+            <a href="/blog/{{_id}}" class="admin__view__btn">View</a>
           </td>
         </tr>
       {{/posts}}
