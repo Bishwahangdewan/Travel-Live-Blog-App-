@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 //import modals
-const Blog = require('../../modals/Blog.js')
+const Blog = require('../../modals/Blog.js');
+const EmailList = require('../../modals/EmailList.js');
 
 //Route: Root : HomePage
 router.get('/', (req, res) => {
@@ -45,7 +46,6 @@ router.get('/blog/:id', (req, res) => {
 
 //Search query
 router.get('/search', (req, res) => {
-  console.log(req.query.search);
   Blog.find({
     title : { $regex: req.query.search, $options: "i" },
     description : { $regex: req.query.search, $options: "i" },
@@ -53,9 +53,32 @@ router.get('/search', (req, res) => {
   .then((data) => {
     res.render('searchResults', {
       posts: data,
-      query: req.query.search, 
+      query: req.query.search,
     })
   })
 })
+
+//get emailList
+router.get('/admin/emailList', (req,res) => {
+  EmailList.find({})
+    .then((data) => {
+      res.render('emailList', { email: data })
+    })
+    .catch((err) => console.log(err));
+})
+
+//save email
+router.post('/emailList', (req, res) => {
+  const emailList = new EmailList({
+    email: req.body.email,
+  })
+
+  emailList.save()
+    .then((data) => {
+      req.flash('message', 'Thank you for subscribing to my newsletter');
+      res.redirect('/');
+    })
+    .catch((err) => console.log(err));
+});
 
 module.exports = router;

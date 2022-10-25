@@ -19,6 +19,15 @@
     </div>
   </div>
 
+  <!-- FLASH-MESSAGE -->
+  <div class="msg__container">
+    {{#if message.message}}
+      <div class="msg msg-success">
+        <p>{{message.message}}</p>
+      </div>
+    {{/if}}
+  </div>
+
   <!-- HOME-BODY -->
   <div class="homeBody__container">
     <div class="mostPopular__container">

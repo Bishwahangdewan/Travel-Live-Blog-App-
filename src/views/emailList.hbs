@@ -1,0 +1,27 @@
+{{> header }}
+{{> navbar }}
+
+  <div class="dashboard__container">
+    <h3 class="h3 py-30">Manage your Subscribers</h3>
+
+    <table class="table__container">
+      <tr class="table__head__row">
+        <th class="table__head">Subscriber List</th>
+        <th class="table__head">Created On</th>
+      </tr>
+
+      {{#email}}
+        <tr class="table__body__row">
+          <td class="table__body">{{email}}</td>
+          <td class="table__body">{{createdAt}}</td>
+        </tr>
+      {{/email}}
+
+    </table>
+
+    <div class="flex py-50">
+      <h3 class="h3">Go Back<h3>
+      <a class="admin__edit__btn ml-20" href="/admin/dashboard" >Go Back</a>
+    </div>
+
+{{> adminFooter}}

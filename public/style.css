@@ -295,7 +295,9 @@
 
 
 /*-----------FOOTER-NEWSLETTER--------------*/
+
 .newsletter__container{
+  width: 100%;
   background-color: #111;
   padding-top: 5%;
   margin-top: 4%;
