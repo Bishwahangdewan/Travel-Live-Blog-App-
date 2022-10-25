@@ -30,8 +30,20 @@
   color: #555;
 }
 
+.link{
+  text-decoration: none;
+}
+
 .py-10{
   padding: 10px 0;
+}
+
+.pb-15{
+  padding-bottom: 15px;
+}
+
+.pt-10{
+  padding-top: 10px;
 }
 
 .py-30{
@@ -62,6 +74,11 @@
   display: flex;
 }
 
+.msg__container{
+  width: 90%;
+  margin: auto;
+}
+
 .msg{
   width: 70%;
   padding: 10px;
@@ -73,6 +90,12 @@
   color: #270;
   background-color: #DFF2BF;
 }
+
+.msg-error{
+  color: #D8000C;
+  background-color: #FFBABA;
+}
+
 
 /*---------- NAVBAR-STYLES --------------*/
 .navbar__container{
@@ -362,7 +385,6 @@
   font-size: 14px;
   cursor: pointer;
   margin-top:20px;
-
 }
 
 .auth__input::placeholder{

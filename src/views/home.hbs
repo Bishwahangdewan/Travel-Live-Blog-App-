@@ -3,7 +3,7 @@
   <!--Showcase-->
   <style>
     .showcase__container{
-      background-image: url('/img/showcase_img.png');
+      background-image: url('/uploads/{{showcaseData.image}}');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -13,8 +13,8 @@
   <!-- HOME-SHOWCASE -->
   <div class="showcase__container">
     <div class="showcase__content">
-      <h1 class="showcase__title">Moraine Lake</h1>
-      <p class="showcase__para">It’s unique colour is due to the refraction of light off the rock flour deposited in the lake on a continual basis by surrounding glaciers.</p>
+      <h1 class="showcase__title">{{showcaseData.title}}</h1>
+      <p class="showcase__para">{{showcaseData.description}}</p>
       <button class="showcase__btn">Read More</button>
     </div>
   </div>
@@ -24,20 +24,22 @@
     <div class="mostPopular__container">
       <h2 class="h2">Most Popular Blogs</h2>
 
-      <!--BLOG-CARD-->
-      <div class="blogCard__container--small">
-        <div class="blogCard__imgContainer--small">
-          <img src="img/blogCard_img.png" class="blogCard__img--small" />
-        </div>
+      {{#each mostPopular}}
+        <!--BLOG-CARD-->
+        <div class="blogCard__container--small">
+          <div class="blogCard__imgContainer--small">
+            <img src="uploads/{{image}}" class="blogCard__img--small" />
+          </div>
 
-        <div class="blogCard__contentContainer--small">
-          <h4 class="h4">Machu Pichu</h4>
-          <p class="para-text py-10">Much of the farming done at Machu Picchu was done on its hundreds of man-made terraces. These terraces were a work of considerable engineering, built to ensure good drainage ....</p>
-          <button class="blogCard__btn">Read More</button>
+          <div class="blogCard__contentContainer--small">
+            <h4 class="h4">{{title}}</h4>
+            <p class="para-text py-10">{{description}}</p>
+            <a href="/blog/{{_id}}" class="blogCard__btn">Read More</a>
+          </div>
         </div>
-      </div>
+      {{/each}}
 
-      <!--BLOG-CARD-->
+      <!--BLOG-CARD
       <div class="blogCard__container--small">
         <div class="blogCard__imgContainer--small">
           <img src="img/blogCard_img2.png" class="blogCard__img--small" />
@@ -50,7 +52,7 @@
         </div>
       </div>
 
-      <!--BLOG-CARD-->
+
       <div class="blogCard__container--small">
         <div class="blogCard__imgContainer--small">
           <img src="img/blogCard_img3.png" class="blogCard__img--small" />
@@ -62,8 +64,9 @@
           <button class="blogCard__btn">Read More</button>
         </div>
       </div>
+      -->
 
-      <h4 class="h4">Click here to read more articles</h4>
+      <a href="/blog" class="link h4">Click here to read more articles<a>
     </div>
 
     <!--RECENTLY-UPDATED-->
@@ -72,13 +75,13 @@
 
       <div class="blogCard__container--vertical">
         <div class="blogCard__imgContainer--vertical">
-          <img src="img/blogCard_img2.png" class="blogCard__img--vertical" />
+          <img src="uploads/{{latestData.image}}" class="blogCard__img--vertical" />
         </div>
 
         <div class="blogCard__contentContainer--vertical">
-          <h4 class="h4">Imperial Palace</h4>
-          <p class="para-text py-10">The Tokyo Imperial Palace is the main residence of the Emperor of Japan. It is a large park-like area located in the Chiyoda district of the Chiyoda ward of Tokyo and contains several buildings including ....</p>
-          <button class="blogCard__btn">Read More</button>
+          <h4 class="h4">{{latestData.title}}</h4>
+          <p class="para-text py-10">{{latestData.description}} ....</p>
+          <a href="/blog/{{latestData._id}}" class="blogCard__btn">Read More</a>
         </div>
       </div>
 

@@ -10,6 +10,11 @@ const blogSchema = new schema({
     type: String,
     required: true,
   },
+  description : {
+    type: String,
+    max: 170,
+    required: true,
+  },
   image : {
     type : String,
   },

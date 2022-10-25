@@ -24,18 +24,47 @@ router.get('/admin', (req, res) => {
   res.render('adminLogin');
 })
 
+//handle LOGIN
+router.post('/admin/login', (req, res) => {
+  if (req.body.password === 'password') {
+    //login success
+    req.session.admin = true;
+    req.flash('message', 'Admin Login Successfull');
+    res.redirect('/admin/dashboard');
+  } else {
+    //login failed
+    req.flash('message', 'Oops! You have entered the wrong password. Please enter the correct password.');
+    res.redirect('/admin');
+  }
+})
+
+//handle Logout
+router.get('/admin/logout', (req, res, next) => {
+  req.session.destroy((err) => {
+    if(err) {
+      console.log(err);
+    } else {
+      res.redirect('/');
+    }
+  })
+})
+
 
 //get the dashboard page
 router.get('/admin/dashboard', (req, res) => {
-  //get all posts
-  Blog.find({})
-    .then((data) => {
-      console.log(data)
-      res.render('dashboard', { posts: data });
+  if(req.session.admin) {
+    //get all posts
+    Blog.find({})
+      .then((data) => {
+        console.log(data)
+        res.render('dashboard', { posts: data });
     })
     .catch((err) => console.log(err));
+  } else {
+    req.flash('message', 'Please login first');
+    res.redirect('/admin');
+  }
 })
-
 
 //get the create post page
 router.get('/admin/createPost', (req,res) => {
@@ -51,14 +80,11 @@ router.get('/admin/flash', (req, res) => {
 
 //add a POST
 router.post('/admin/createPost', upload.single('blogImg'), (req, res) => {
-  const blogTitle = req.body.title;
-  const blogArticle = req.body.article;
-  console.log(req.file)
-  console.log(req.file.originalname.split('.'))
   //creating the instance of the model
   const newBlogPost = new Blog({
-    title : blogTitle,
-    article : blogArticle,
+    title : req.body.title,
+    article : req.body.article,
+    description: req.body.description,
     image : req.file.filename,
   });
   //saving in the databse
@@ -91,6 +117,7 @@ router.put('/admin/editPost/:id', (req, res) => {
   .then((data) => {
     data.title = req.body.title;
     data.article = req.body.article;
+    data.description = req.body.description;
     //save the updated data
     data.save()
       .then((savedData) => {

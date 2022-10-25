@@ -5,20 +5,22 @@
     <h2 class="h2 py-30">Articles to Read</h2>
 
     <div class="width-80">
-      <!--BLOG-CARD-->
-      <div class="blogCard__container--small">
-        <div class="blogCard__imgContainer--small">
-          <img src="img/blogCard_img.png" class="blogCard__img--small" />
-        </div>
+      {{#each posts}}
+        <!--BLOG-CARD-->
+        <div class="blogCard__container--small">
+          <div class="blogCard__imgContainer--small">
+            <img src="uploads/{{image}}" class="blogCard__img--small" />
+          </div>
 
-        <div class="blogCard__contentContainer--small">
-          <h4 class="h4">Machu Pichu</h4>
-          <p class="para-text py-10">Much of the farming done at Machu Picchu was done on its hundreds of man-made terraces. These terraces were a work of considerable engineering, built to ensure good drainage ....</p>
-          <a href="/blog/sdf" class="blogCard__btn">Read More</a>
+          <div class="blogCard__contentContainer--small">
+            <h4 class="h4">{{title}}</h4>
+            <p class="para-text pb-15 pt-10">{{description}}...</p>
+            <a href="/blog/{{_id}}" class="blogCard__btn">Read More</a>
+          </div>
         </div>
-      </div>
+      {{/each}}
 
-      <!--BLOG-CARD-->
+      <!--
       <div class="blogCard__container--small">
         <div class="blogCard__imgContainer--small">
           <img src="img/blogCard_img2.png" class="blogCard__img--small" />
@@ -31,7 +33,7 @@
         </div>
       </div>
 
-      <!--BLOG-CARD-->
+
       <div class="blogCard__container--small">
         <div class="blogCard__imgContainer--small">
           <img src="img/blogCard_img3.png" class="blogCard__img--small" />
@@ -43,6 +45,7 @@
           <button href="/blog/assd" class="blogCard__btn">Read More</button>
         </div>
       </div>
+      -->
 
     </div>
   </div>

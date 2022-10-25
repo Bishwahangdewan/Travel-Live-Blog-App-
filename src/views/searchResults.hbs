@@ -1,0 +1,26 @@
+{{> header }}
+{{> navbar }}
+
+  <div class="blogs__container">
+    <h2 class="h2 py-30">Search Results for "{{query}}"</h2>
+
+    <div class="width-80">
+      {{#each posts}}
+        <!--BLOG-CARD-->
+        <div class="blogCard__container--small">
+          <div class="blogCard__imgContainer--small">
+            <img src="uploads/{{image}}" class="blogCard__img--small" />
+          </div>
+
+          <div class="blogCard__contentContainer--small">
+            <h4 class="h4">{{title}}</h4>
+            <p class="para-text pb-15 pt-10">{{description}}...</p>
+            <a href="/blog/{{_id}}" class="blogCard__btn">Read More</a>
+          </div>
+        </div>
+      {{/each}}
+
+    </div>
+  </div>
+
+{{> footer }}

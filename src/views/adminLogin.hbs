@@ -1,10 +1,19 @@
 {{> header}}
 {{> navbar}}
+
+  <div class="msg__container">
+    {{#each message}}
+      <div class="msg msg-error">
+        <p>{{this}}</p>
+      </div>
+    {{/each}}
+  </div>
+
   <div class="auth__container">
     <h2 class="h2 text-center">Admin Login</h2>
     <p class="para__text text-center py-30">Enter your password to go to Dashboard</p>
 
-    <form class="auth__form__group">
+    <form method="POST" action ="admin/login" class="auth__form__group">
       <input
         type="password"
         class="auth__input"

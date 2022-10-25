@@ -18,6 +18,17 @@
       </div>
 
       <div class="createPost__formGroup">
+        <label for="description">Blog Description:</label>
+        <input
+          type="text"
+          name="description"
+          id="description"
+          class="createPost__formInput"
+          value='{{post.description}}'
+        />
+      </div>
+
+      <div class="createPost__formGroup">
         <script src="https://cdn.ckeditor.com/4.9.1/standard/ckeditor.js"></script>
         <label for="article">Blog Article:</label>
         <textarea

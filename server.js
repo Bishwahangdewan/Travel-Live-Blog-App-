@@ -23,8 +23,8 @@ mongoose.connect('mongodb://localhost:27017/travel&live')
 
 //setup sessions and flash
 app.use(session({
-    secret:'flashblog',
-    saveUninitialized: true,
+    secret:'secret',
+    saveUninitialized: false,
     resave: true
 }));
 app.use(flash());
